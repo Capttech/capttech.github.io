@@ -282,7 +282,7 @@ input:checked+.sideBarSlider:before {
 
 
 /*==========| SIDE BAR ADJUST |==========*/
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1000px) {
     .sideBar {
         position: fixed;
         margin-left: -19em;
@@ -422,7 +422,7 @@ input:checked+.sideBarSlider:before {
 }
 
 /*==========| MAIN SECTION 1 ADJUST |==========*/
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1000px) {
     .mainPageBlock {
         display: block;
     }
@@ -493,7 +493,7 @@ input:checked+.sideBarSlider:before {
 
 
 /*==========| MAIN SECTION 2 ADJUST |==========*/
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1000px) {
     .mainPageSec2TitleAdj {
         margin-left: 0.3em;
     }
@@ -583,7 +583,7 @@ input:checked+.sideBarSlider:before {
 }
 
 /*==========| MAIN SECTION 3 ADJUST |==========*/
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1000px) {
     .mainPageSec3BlockAdj {
         display: block;
         height: fit-content;
@@ -632,7 +632,7 @@ input:checked+.sideBarSlider:before {
 }
 
 /*==========| MAIN SECTION 4 ADJUST |==========*/
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1000px) {
     .mainPageSec4TitleAdj {
         margin-left: 0.7em;
     }
