@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <!--==========| IMPORTED FONTS |==========-->
     <style>
@@ -16,6 +17,9 @@
     <!--==========| STYLE SHEETS |==========-->
     <link rel="stylesheet" href="index.css">
 
+    <!--==========| SCRIPTS |==========-->
+    <script src="index.js"></script>
+
     <!--==========| TITLE |==========-->
     <title>Joseph Dunn</title>
 </head>
@@ -23,9 +27,9 @@
 <body>
 
     <!--==========| SIDE INFO BAR |==========-->
-    <section class="sideBar">
+    <section class="sideBar" id="sideBar">
 
-        <div class="sideBarCtrl sideBarCtrlShow">
+        <div class="sideBarCtrl sideBarCtrlShow" onclick="showSideBar()">
             <svg class="sideBarCtrlImg" viewBox="0 0 16 16">
                 <path
                     d="M1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4zm-1 8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8z" />
@@ -36,14 +40,14 @@
         <img class="sideBarCircleImg" src="images/joseph.png">
         <p class="sideBarDesc">Hi, my name is Joseph Dunn. I am a owner and head developer of my own company.
             Welcome to my portfolio website.</p>
-        <div class="sideBarSocials">
+        <div class="sideBarSocials sideBarSocialsAdj">
             <a href="https://github.com/Capttech" target="_blank" class="sideBarSocialsIcon"
                 style="background-image: url('images/giticon.png');"></a>
 
             <a href="https://twitter.com/capttech3" target="_blank" class="sideBarSocialsIcon"
                 style="background-image: url('images/twittericon.png');"></a>
 
-            <a href="https://twitter.com/capttech3" target="_blank" class="sideBarSocialsIcon"
+            <a href="https://www.linkedin.com/in/joseph-dunn-4198b3261/" target="_blank" class="sideBarSocialsIcon"
                 style="background-image: url('images/linkedinIco.png');"></a>
 
             <a href="https://phantomfirestudios.us" target="_blank" class="sideBarSocialsIcon"
@@ -56,7 +60,7 @@
                     <path
                         d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
                 </svg>
-                <a class="sideBarNavOptTxt" href="default.asp">About me</a>
+                <a class="sideBarNavOptTxt sideBarNavOptTxtAdj" href="#scroll">About me</a>
             </li>
 
             <li class="sideBarNavOpt">
@@ -64,7 +68,7 @@
                     <path
                         d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
                 </svg>
-                <a class="sideBarNavOptTxt" href="default.asp">Portfolio</a>
+                <a class="sideBarNavOptTxt sideBarNavOptTxtAdj" href="default.asp">Projects </a>
             </li>
 
             <li class="sideBarNavOpt">
@@ -74,12 +78,21 @@
                     <path
                         d="M4.603 12.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.701 19.701 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.187-.012.395-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.065.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.716 5.716 0 0 1-.911-.95 11.642 11.642 0 0 0-1.997.406 11.311 11.311 0 0 1-1.021 1.51c-.29.35-.608.655-.926.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.27.27 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.647 12.647 0 0 1 1.01-.193 11.666 11.666 0 0 1-.51-.858 20.741 20.741 0 0 1-.5 1.05zm2.446.45c.15.162.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.881 3.881 0 0 0-.612-.053zM8.078 5.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z" />
                 </svg>
-                <a class="sideBarNavOptTxt" href="default.asp">Resume</a>
+                <a class="sideBarNavOptTxt sideBarNavOptTxtAdj" href="default.asp">Resume</a>
             </li>
+
+            <li class="sideBarNavOpt">
+                <svg class="sideBarNavOptImg" viewBox="0 0 16 16">
+                    <path
+                        d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                </svg>
+                <a class=" sideBarNavOptTxt sideBarNavOptTxtAdj" href="default.asp">(662) 417-5820</a>
+            </li>
+
         </nav>
 
-        <button class="sideBarBlock">
-            <svg class="sideBarBlockImg" viewBox="0 0 16 16">
+        <button class="sideBarBlock sideBarBlockAdj">
+            <svg class="sideBarBlockImg sideBarBlockImgAdj" viewBox="0 0 16 16">
                 <path
                     d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z" />
             </svg>
@@ -89,7 +102,7 @@
         <div class="sideBarLine"></div>
 
         <label class="sideBarSwitch">
-            <input class="sideBarBox" type="checkbox">
+            <input id="sideBarBox" class="sideBarBox" type="checkbox" onchange="setBackgroundColors()">
             <span class="sideBarSlider round"></span>
         </label>
     </section>
@@ -98,28 +111,29 @@
     <section class="mainPage fullMainPage">
 
         <!--=====| SECTION 1 |=====-->
-        <div class="mainPageSec1">
+        <div class="mainPageSec1 mainPageBlock">
 
-            <div class="mainPageSec1Content">
+            <div class="mainPageSec1Content mainPageSec1ImgCenterAdj">
 
                 <h1 class="mainPageSec1ContentHead">Joseph Dunn</h1>
                 <h2 class="mainPageSec1ContentDesc">Inspiring Software Engineer</h2>
                 <p class="mainPageSec1ContentPar">I am a software engineer that specializes in the front end and backend
                     of programing. I have
-                    experience in righting multiple languages including multiple popular languages. I have a lot of
+                    experience in righting multiple languages including multiple popular computer languages. I have a
+                    lot of
                     experience in working in large and small groups.</p>
 
                 <div class="mainPageSec1ContentSec">
-                    <div class="mainPageSec1ContentBox">
-                        <svg class="mainPageSec1ContentBoxImg" viewBox="0 0 16 16">
+                    <div class="mainPageSec1ContentBox mainPageSec1ContentBoxAdj">
+                        <svg class="mainPageSec1ContentBoxImg mainPageSec1ContentBoxImgAdj" viewBox="0 0 16 16">
                             <path
                                 d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z" />
                         </svg>
                         <a class="mainPageSec1ContentBoxTxt">View Portfolio</a>
                     </div>
 
-                    <div class="mainPageSec1ContentBox2">
-                        <svg class="mainPageSec1ContentBoxImg" viewBox="0 0 16 16">
+                    <div class="mainPageSec1ContentBox2 mainPageSec1ContentBoxAdj">
+                        <svg class="mainPageSec1ContentBoxImg mainPageSec1ContentBoxImgAdj" viewBox="0 0 16 16">
                             <path
                                 d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z" />
                         </svg>
@@ -129,19 +143,23 @@
 
             </div>
 
-            <img class="mainPageSec1Img " src="images/joseph.png">
+            <img class="mainPageSec1Img mainPageSec1ImgCenter" src="images/joseph.png">
         </div>
 
         <!--=====| SECTION 2 |=====-->
         <div class="mainPageSec2">
-            <h2 class="mainPageSec2Title">What I Do</h2>
+            <h2 class="mainPageSec2Title mainPageSec2TitleAdj">What I Do</h2>
 
-            <p class="mainPageSec2Desc">I have over 18 years of computer experience and over 10 years of computer
+            <p class="mainPageSec2Desc mainPageSec2DescAdj">I have over 18 years of computer experience and over 10
+                years of computer
                 development. I have worked in the software and hardware side of computers. I have a lot of experience
                 with the software side as I know several programing languages. A few of the languages that I have worked
                 with are JS (Javascript), CSS, HTML,
                 Python, Batch, SQL, LUA and AHK (Auto Hot Key). A few of the frameworks that I am familiar with are
-                <a>React JS</a> and <a>NodeJS</a>. I learn quickly when coming across a new language or framework.
+                <a href="https://reactjs.org/" target="_blank" class="removeDec">React JS</a> and <a
+                    href="https://nodejs.org/en/about/" target="_blank" class="removeDec">NodeJS</a>. I learn quickly
+                when
+                coming across a new language or framework.
                 Please check out my <a>resume</a> and <a>project portfolio</a>.
             </p>
         </div>
@@ -149,53 +167,36 @@
         <!--=====| SECTION 3 |=====-->
         <div class="mainPageSec3">
 
-            <div class="mainPageSec3Block">
+            <h2 class="mainPageSec3Title mainPageSec3TitleAdj">Skills / Projects</h2>
 
-                <div class="mainPageSec3BlockLan">
+            <div class="mainPageSec3Block mainPageSec3BlockAdj">
+
+                <div class="mainPageSec3BlockLan mainPageSec3BlockLanAdj">
                     <img class="mainPageSec3BlockLanIco" src="images/githubIco.png">
-                    <h3 class="mainPageSec3BlockLanTitle">Python</h3>
-                    <p class="mainPageSec3BlockLanDesc">I am skilled in righting python code. I typically use classes to
-                        make future projects easier, by using those "tools" that I have built before. This makes
-                        creating future advanced python projects take less time and by using code that is already tested
-                        you can take the time testing your new python functions vs testing all the code in the entire
-                        project.</p>
+                    <h3 class="mainPageSec3BlockLanTitle" href="https://replit.com/@AshleyG4/Cooking-With-Code">
+                        Python</h3>
+                    <img class="mainPageSec3BlockLanDesc" src="images/cooking.png">
                 </div>
 
-                <div class="mainPageSec3BlockLan">
-                    <img class="mainPageSec3BlockLanIco" src="images/githubIco.png">
-                    <h3 class="mainPageSec3BlockLanTitle">Javascript</h3>
-                    <p class="mainPageSec3BlockLanDesc">I am skilled in righting python code. I typically use classes to
-                        make future projects easier, by using those "tools" that I have built before. This makes
-                        creating future advanced python projects take less time and by using code that is already tested
-                        you can take the time testing your new python functions vs testing all the code in the entire
-                        project.</p>
-                </div>
-
-                <div class="mainPageSec3BlockLan">
-                    <img class="mainPageSec3BlockLanIco" src="images/githubIco.png">
-                    <h3 class="mainPageSec3BlockLanTitle">LUA</h3>
-                    <p class="mainPageSec3BlockLanDesc">I am skilled in righting python code. I typically use classes to
-                        make future projects easier, by using those "tools" that I have built before. This makes
-                        creating future advanced python projects take less time and by using code that is already tested
-                        you can take the time testing your new python functions vs testing all the code in the entire
-                        project.</p>
-                </div>
-
-                <div class="mainPageSec3BlockLan">
-                    <img class="mainPageSec3BlockLanIco" src="images/githubIco.png">
-                    <h3 class="mainPageSec3BlockLanTitle">HTML</h3>
-                    <p class="mainPageSec3BlockLanDesc">I am skilled in righting python code. I typically use classes to
-                        make future projects easier, by using those "tools" that I have built before. This makes
-                        creating future advanced python projects take less time and by using code that is already tested
-                        you can take the time testing your new python functions vs testing all the code in the entire
-                        project.</p>
+                <div class="mainPageSec3BlockLan mainPageSec3BlockLanAdj">
+                    <img class="mainPageSec3BlockLanIco" src="images/cssIco.png">
+                    <h3 class="mainPageSec3BlockLanTitle" href="https://capttech.github.io/fakecharity.github.io/">
+                        CSS</h3>
+                    <img class="mainPageSec3BlockLanDesc" src="images/us.png">
                 </div>
 
             </div>
 
-            <div class="mainPageSec3Block">
+            <div class="mainPageSec3Block mainPageSec3BlockAdj">
 
-                <div class="mainPageSec3BlockLan">
+                <div class="mainPageSec3BlockLan mainPageSec3BlockLanAdj">
+                    <img class="mainPageSec3BlockLanIco" src="images/htmico.png">
+                    <h3 class="mainPageSec3BlockLanTitle" href="https://capttech.github.io/goat.github.io/">
+                        HTML</h3>
+                    <img class="mainPageSec3BlockLanDesc" src="images/police.png">
+                </div>
+
+                <!-- <div class="mainPageSec3BlockLan mainPageSec3BlockLanAdj">
                     <img class="mainPageSec3BlockLanIco" src="images/githubIco.png">
                     <h3 class="mainPageSec3BlockLanTitle">CSS</h3>
                     <p class="mainPageSec3BlockLanDesc">I am skilled in righting python code. I typically use classes to
@@ -203,38 +204,16 @@
                         creating future advanced python projects take less time and by using code that is already tested
                         you can take the time testing your new python functions vs testing all the code in the entire
                         project.</p>
-                </div>
+                </div> -->
 
-                <div class="mainPageSec3BlockLan">
-                    <img class="mainPageSec3BlockLanIco" src="images/githubIco.png">
-                    <h3 class="mainPageSec3BlockLanTitle">MySQL</h3>
-                    <p class="mainPageSec3BlockLanDesc">I am skilled in righting python code. I typically use classes to
-                        make future projects easier, by using those "tools" that I have built before. This makes
-                        creating future advanced python projects take less time and by using code that is already tested
-                        you can take the time testing your new python functions vs testing all the code in the entire
-                        project.</p>
-                </div>
+            </div>
 
-                <div class="mainPageSec3BlockLan">
-                    <img class="mainPageSec3BlockLanIco" src="images/githubIco.png">
-                    <h3 class="mainPageSec3BlockLanTitle">Batch</h3>
-                    <p class="mainPageSec3BlockLanDesc">I am skilled in righting python code. I typically use classes to
-                        make future projects easier, by using those "tools" that I have built before. This makes
-                        creating future advanced python projects take less time and by using code that is already tested
-                        you can take the time testing your new python functions vs testing all the code in the entire
-                        project.</p>
-                </div>
+            <!--=====| SECTION 4 |=====-->
+            <div class="mainPageSec4">
 
-                <div class="mainPageSec3BlockLan">
-                    <img class="mainPageSec3BlockLanIco" src="images/githubIco.png">
-                    <h3 class="mainPageSec3BlockLanTitle">AHK (Auto Hot Key)</h3>
-                    <p class="mainPageSec3BlockLanDesc">I am skilled in righting python code. I typically use classes to
-                        make future projects easier, by using those "tools" that I have built before. This makes
-                        creating future advanced python projects take less time and by using code that is already tested
-                        you can take the time testing your new python functions vs testing all the code in the entire
-                        project.</p>
-                </div>
+                <h2 class="mainPageSec4Title mainPageSec4TitleAdj">Resume</h2>
 
+                <img src="images/resume.png">
             </div>
 
         </div>

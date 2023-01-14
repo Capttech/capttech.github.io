@@ -5,6 +5,10 @@
     /* outline: 1px solid rgb(216, 68, 19); */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     position: absolute;
     top: 0%;
@@ -16,6 +20,14 @@ body {
     overflow: hidden;
 }
 
+:root {
+    --backgroundOne: rgb(56, 178, 121);
+    --backgroundTwo: rgb(249, 249, 249);
+    --textColor: rgb(33, 33, 33);
+    --textColor2: rgb(40, 40, 40);
+    --elementBack: rgb(0, 0, 0, 0.1);
+}
+
 /*==========| MAIN SECTIONS |==========*/
 .sideBar {
     position: relative;
@@ -24,20 +36,21 @@ body {
     min-width: 19em;
     max-width: 19em;
     height: 100%;
-    background-color: rgb(56, 178, 121);
+    background-color: var(--backgroundOne);
 }
 
 
 .mainPage {
     width: 85%;
     height: 100%;
-    background-color: rgb(249, 249, 249);
+    background-color: var(--backgroundTwo);
     overflow: auto;
 }
 
 /*==========| SIDE BAR DETAILS |==========*/
 .sideBarCtrl {
     display: none;
+    z-index: 999;
 }
 
 .sideBarCtrlImg {
@@ -50,6 +63,7 @@ body {
 .sideBarCircleImg {
     width: 70%;
     height: fit-content;
+    max-height: 13em;
     margin-left: 15%;
     margin-top: 2%;
     border-radius: 50%;
@@ -60,6 +74,7 @@ body {
     height: fit-content;
     margin-left: 7%;
     margin-top: 1%;
+    color: var(--textColor);
     font-size: 0.9em;
     text-align: center;
     font-weight: bold;
@@ -75,8 +90,8 @@ body {
 }
 
 .sideBarSocialsIcon {
-    width: 13%;
-    height: 94%;
+    width: 3em;
+    height: 3em;
     margin-top: 3%;
     border-radius: 50%;
     margin: auto;
@@ -104,7 +119,7 @@ body {
 }
 
 .sideBarNavOptImg {
-    fill: rgb(0, 0, 3);
+    fill: var(--textColor);
     width: fit-content;
     height: 100%;
     width: 8%;
@@ -113,15 +128,21 @@ body {
 }
 
 .sideBarNavOptTxt {
-    width: 30%;
+    width: 60%;
     height: 100%;
-    color: rgb(0, 0, 0);
+    color: var(--textColor);
     font-size: 1.1em;
     text-align: left;
     font-weight: bold;
     pointer-events: none;
     text-decoration: none;
     padding-left: 0.6em;
+    z-index: 20;
+}
+
+.sideBarNavOpt:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .sideBarBlock {
@@ -188,7 +209,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    color: rgb(33, 33, 33);
+    color: var(--textColor);
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
@@ -199,7 +220,7 @@ body {
     content: "";
     height: 100%;
     width: 26px;
-    color: rgb(0, 0, 0);
+    color: var(--textColor);
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
@@ -228,10 +249,44 @@ input:checked+.sideBarSlider:before {
     border-radius: 50%;
 }
 
-/*==========| SIDE BAR ADJUST |==========*/
-@media only screen and (max-width: 1200px) {
-    .sideBar {
+/*==========| SIDE BAR ANIMATION |==========*/
+.showSideBar {
+    animation-name: showSideBar;
+    animation-duration: 2s;
+}
+
+.hideSideBar {
+    animation-name: hideSideBar;
+    animation-duration: 2s;
+}
+
+@keyframes showSideBar {
+    from {
         margin-left: -19em;
+    }
+
+    to {
+        margin-left: 0;
+    }
+}
+
+@keyframes hideSideBar {
+    from {
+        margin-left: 0;
+    }
+
+    to {
+        margin-left: -19em;
+    }
+}
+
+
+/*==========| SIDE BAR ADJUST |==========*/
+@media only screen and (max-width: 1600px) {
+    .sideBar {
+        position: fixed;
+        margin-left: -19em;
+        z-index: 999;
     }
 
     .sideBarCtrlShow {
@@ -239,25 +294,45 @@ input:checked+.sideBarSlider:before {
         top: 0.8%;
         left: 100%;
         width: 15%;
-        height: 4%;
+        height: 2em;
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
         border-top: 1px solid rgb(33, 33, 33);
         border-right: 1px solid rgb(33, 33, 33);
         border-bottom: 1px solid rgb(33, 33, 33);
-        background-color: rgb(56, 178, 121);
+        background-color: var(--backgroundOne);
         display: block;
     }
 
     .fullMainPage {
         width: 100%;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    .sideBarSocialsAdj {
+        height: 5%;
+    }
+
+    .sideBarNavOptTxtAdj {
+        width: 80%;
+    }
+
+    .sideBarBlockImgAdj {
+        width: 15%;
+        margin-top: 0;
+    }
+
+    .sideBarBlockAdj {
+        height: 2.5em;
     }
 }
 
 /*==========| MAIN PAGE SECTION 1 |==========*/
 .mainPageSec1 {
     width: 100%;
-    height: 35%;
+    min-height: 35%;
+    height: 11em;
     display: flex;
     margin-top: 1em;
 }
@@ -276,17 +351,20 @@ input:checked+.sideBarSlider:before {
 }
 
 .mainPageSec1ContentHead {
+    color: var(--textColor);
     font-size: 1.6em;
     font-weight: bold;
     padding-bottom: 0.3em;
 }
 
 .mainPageSec1ContentDesc {
+    color: var(--textColor);
     font-size: 1.2em;
     padding-bottom: 0.8em;
 }
 
 .mainPageSec1ContentPar {
+    color: var(--textColor);
     font-size: 0.95em;
     padding-bottom: 0.8em;
 }
@@ -298,18 +376,28 @@ input:checked+.sideBarSlider:before {
 }
 
 .mainPageSec1ContentBox {
-    width: 20%;
+    width: fit-content;
     height: 100%;
     background-color: rgb(56, 178, 121);
     display: flex;
 }
 
+.mainPageSec1ContentBox:hover {
+    background-color: rgb(208, 31, 31);
+    cursor: pointer;
+}
+
 .mainPageSec1ContentBox2 {
-    width: 20%;
+    width: fit-content;
     height: 100%;
     background-color: rgb(47, 47, 47);
     margin-left: 15em;
     display: flex;
+}
+
+.mainPageSec1ContentBox2:hover {
+    background-color: rgb(208, 31, 31);
+    cursor: pointer;
 }
 
 .mainPageSec1ContentBoxImg {
@@ -333,13 +421,43 @@ input:checked+.sideBarSlider:before {
     letter-spacing: 2px;
 }
 
+/*==========| MAIN SECTION 1 ADJUST |==========*/
+@media only screen and (max-width: 1600px) {
+    .mainPageBlock {
+        display: block;
+    }
+
+    .mainPageSec1ImgCenterAdj {
+        width: 100%;
+        margin-left: 0.4em;
+        padding-left: 0%;
+        margin-top: 2.6em;
+    }
+
+    .mainPageSec1ImgCenter {
+        display: none;
+    }
+
+    .mainPageSec1ContentBoxAdj {
+        width: 12em;
+        height: 2.8em;
+        margin: none;
+        margin-left: 1em;
+        padding: none;
+    }
+
+    .mainPageSec1ContentBoxImgAdj {
+        width: 1.4em;
+    }
+}
+
 /*==========| MAIN PAGE SECTION 2 |==========*/
 
 .mainPageSec2 {
     width: 100%;
     height: fit-content;
     display: block;
-    margin-top: 1em;
+    margin-top: 10em;
     padding-bottom: 1.2em;
     padding-top: 1.2em;
 }
@@ -347,6 +465,7 @@ input:checked+.sideBarSlider:before {
 .mainPageSec2Title {
     width: 50%;
     height: 12%;
+    color: var(--textColor);
     font-size: 1.6em;
     font-weight: bold;
     border-left: 4px solid rgb(56, 178, 121);
@@ -358,6 +477,7 @@ input:checked+.sideBarSlider:before {
 .mainPageSec2Desc {
     width: 88%;
     height: fit-content;
+    color: var(--textColor);
     font-size: 1.0em;
     font-weight: bold;
     margin-left: 5%;
@@ -367,6 +487,23 @@ input:checked+.sideBarSlider:before {
     color: rgb(56, 178, 121);
 }
 
+.removeDec {
+    text-decoration: none;
+}
+
+
+/*==========| MAIN SECTION 2 ADJUST |==========*/
+@media only screen and (max-width: 1600px) {
+    .mainPageSec2TitleAdj {
+        margin-left: 0.3em;
+    }
+
+    .mainPageSec2DescAdj {
+        width: 96%;
+        margin-left: 2%;
+    }
+}
+
 /*==========| MAIN PAGE SECTION 3 |==========*/
 
 .mainPageSec3 {
@@ -374,18 +511,29 @@ input:checked+.sideBarSlider:before {
     min-height: 30%;
     height: fit-content;
     display: block;
-    margin-top: 1em;
+    margin-top: 10em;
     padding-bottom: 1.2em;
     padding-top: 1.2em;
     display: block;
+}
+
+.mainPageSec3Title {
+    width: 50%;
+    height: 12%;
+    color: var(--textColor);
+    font-size: 1.6em;
+    font-weight: bold;
+    border-left: 4px solid rgb(56, 178, 121);
+    margin-left: 3.2em;
+    padding-left: 0.4em;
+    margin-bottom: 0.8em;
 }
 
 .mainPageSec3Block {
     position: relative;
     top: 0%;
     left: 0%;
-    min-height: 15em;
-    height: fit-content;
+    height: 20em;
     width: 89%;
     margin-left: 4.3%;
     margin-bottom: 1.8em;
@@ -393,9 +541,9 @@ input:checked+.sideBarSlider:before {
 }
 
 .mainPageSec3BlockLan {
-    width: 24%;
+    width: 48%;
     height: 100%;
-    background-color: rgb(0, 0, 0, 0.1);
+    background-color: var(--elementBack);
     border-radius: 9px;
     overflow: hidden;
     display: block;
@@ -414,16 +562,78 @@ input:checked+.sideBarSlider:before {
     height: fit-content;
     font-size: 1.4em;
     margin-left: 0.5em;
-    color: rgb(0, 0, 3);
+    color: var(--textColor2);
     font-weight: bold;
+    text-decoration: none;
+}
+
+.mainPageSec3BlockLanTitle:hover {
+    cursor: pointer;
+    color: rgb(56, 178, 121);
 }
 
 .mainPageSec3BlockLanDesc {
-    width: fit-content;
-    height: fit-content;
+    width: 99%;
+    height: 80%;
     font-size: 0.99em;
-    margin-left: 0.5em;
-    color: rgb(0, 0, 3);
+    margin-left: 0.25em;
+    color: var(--textColor);
     font-weight: bold;
     padding-bottom: 0.2em;
+}
+
+/*==========| MAIN SECTION 3 ADJUST |==========*/
+@media only screen and (max-width: 1600px) {
+    .mainPageSec3BlockAdj {
+        display: block;
+        height: fit-content;
+    }
+
+
+    .mainPageSec3TitleAdj {
+        margin-left: 0.7em;
+    }
+
+    .mainPageSec3BlockLanAdj {
+        margin-top: 0.9em;
+        width: 100%;
+    }
+
+    .mainPageSec3BlockLanDesc {
+        width: 98%;
+    }
+}
+
+/*==========| MAIN PAGE SECTION 4 |==========*/
+.mainPageSec4 {
+    width: 96%;
+    height: fit-content;
+    margin-left: 2%;
+    margin-top: 10em;
+}
+
+.mainPageSec4Title {
+    width: 50%;
+    height: 12%;
+    color: var(--textColor);
+    font-size: 1.6em;
+    font-weight: bold;
+    border-left: 4px solid rgb(56, 178, 121);
+    margin-left: 2.5em;
+    padding-left: 0.4em;
+    margin-bottom: 0.8em;
+}
+
+
+.mainPageSec4 img {
+    margin-left: 4.3%;
+    width: 89%;
+    height: 100%;
+}
+
+/*==========| MAIN SECTION 4 ADJUST |==========*/
+@media only screen and (max-width: 1600px) {
+    .mainPageSec4TitleAdj {
+        margin-left: 0.7em;
+    }
 }
