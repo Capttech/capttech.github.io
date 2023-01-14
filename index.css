@@ -442,7 +442,7 @@ input:checked+.sideBarSlider:before {
         width: 12em;
         height: 2.8em;
         margin: none;
-        margin-left: 1em;
+        margin-left: 0.7em;
         padding: none;
     }
 
