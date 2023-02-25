@@ -23,7 +23,6 @@ function showSideBar() {
 }
 
 
-
 //==========| SET BACKGROUND COLORS |==========\\
 function setBackgroundColors() {
     var currentState = document.getElementById('sideBarBox').checked
@@ -41,4 +40,10 @@ function setBackgroundColors() {
         bodyElement.style.setProperty('--textColor2', 'rgb(40, 40, 40)');
         bodyElement.style.setProperty('--elementBack', 'rgb(0, 0, 0, 0.1)');
     }
+}
+
+
+//==========| OPEN REMOTE SITE |==========\\
+function openSite(webSite) {
+    window.open(webSite, '_blank');
 }
