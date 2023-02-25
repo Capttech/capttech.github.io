@@ -51,6 +51,6 @@ function openSite(webSite) {
 
 //==========| AUTO SCROLL |==========\\
 function autoScroll(idLocation) {
-    var el = document.getElementById(idLocation);
-    el.scrollIntoView(true);
+    var foundElement = document.getElementById(idLocation);
+    foundElement.scrollIntoView(true);
 }
