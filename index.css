@@ -158,6 +158,11 @@ body {
     flex-wrap: wrap;
 }
 
+.sideBarBlock:hover {
+    cursor: pointer;
+    color: rgb(56, 178, 121);
+}
+
 .sideBarBlockImg {
     fill: rgb(255, 255, 255);
     width: 17%;
