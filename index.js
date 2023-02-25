@@ -47,3 +47,10 @@ function setBackgroundColors() {
 function openSite(webSite) {
     window.open(webSite, '_blank');
 }
+
+
+//==========| AUTO SCROLL |==========\\
+function autoScroll(idLocation) {
+    var el = document.getElementById(idLocation);
+    el.scrollIntoView(true);
+}
