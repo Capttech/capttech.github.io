@@ -350,9 +350,10 @@ input:checked+.sideBarSlider:before {
 }
 
 .mainPageSec1Img {
-    width: 20%;
+    width: 20em;
     height: auto;
     margin-left: 3em;
+    border-radius: 2em;
 }
 
 .mainPageSec1ContentHead {
@@ -381,7 +382,7 @@ input:checked+.sideBarSlider:before {
 }
 
 .mainPageSec1ContentBox {
-    width: fit-content;
+    width: 10em;
     height: 100%;
     background-color: rgb(56, 178, 121);
     display: flex;
@@ -413,7 +414,7 @@ input:checked+.sideBarSlider:before {
 }
 
 .mainPageSec1ContentBoxTxt {
-    width: fit-content;
+    min-width: 9em;
     height: 100%;
     color: rgb(255, 255, 255);
     font-size: 0.9em;
@@ -424,6 +425,13 @@ input:checked+.sideBarSlider:before {
     padding-left: 0.2em;
     margin-top: 7%;
     letter-spacing: 2px;
+}
+
+/*==========| IMAGE ADJUST |==========*/
+@media only screen and (max-width: 1500px) {
+    .mainPageSec1Img_mobile {
+        display: none;
+    }
 }
 
 /*==========| MAIN SECTION 1 ADJUST |==========*/
